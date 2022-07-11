@@ -2,6 +2,8 @@
 데코레이터 (Decorator) 란 ?
 사전적 의미로 '디자이너' 등의 의미를 지니고 있는 데코레이터는, 이름 그대로 기존의 코드에 여러가지 기능을 추가하는 파이썬 구문 (Python Syntax) 이다.
 '''
+hunnit_line = ''.join(['-' for i in range(100)])
+
 
 def outer_function(msg):
     def inner_function():
@@ -16,8 +18,7 @@ hi_func()
 bye_func()
 
 # 위의 코드를 보면 클로저와 비슷하다는 것을 알 수 있다. 다만 함수를 다른 함수의 인자로 전달한다는 점이 상이하다
-
-print(''.join(['-' for i in range(100)]))
+print(f'1{hunnit_line}')
 
 def decorator_function(original_function): # 1. 일반 함수 정의
     def wrapper_function(): # 5. 함수 정의
@@ -33,7 +34,7 @@ decorator_display() #4 3에서 리턴되어 호출 대기중인 wrapper_function
 
 # 위와 같이 언뜻 복잡해보이는 데코레이터를 사용 하는 이유 = 이미 작성 된 기존의 코드를 수정하지 않고, Wrapper 함수를 이용하여 여러가지 기능을 추가할 수 있다.
 
-print(''.join(['-' for i in range(100)]))
+print(f'2{hunnit_line}')
 
 def decorator_function_2(original_function_2):
     def wrapper_function(*args, **kwargs): # 여러개의 인자들을 받고 싶을땐 언패킹
@@ -70,7 +71,7 @@ display_info('babymon', 3)
 하지만 위와 같은 구문은 잘 사용하지 않고, '@' 심볼과 데코레이터 함수의 이름을 붙여 쓰는 간단한 구문을 사용한다.
 #3, #4를 주석 처리한 결과가 그 예시다.
 '''
-print(''.join(['-' for i in range(100)]))
+print(f'3{hunnit_line}')
 # 데코레이터의 사용법은 함수에 국한되지 않고 클래스에도 적용될 수 있다. 하지만 클래스 형식의 데코레이터 보단 함수 형식의 데코레이터가 많이 사용된다.
 
 # 클래스로 구현한 데코레이터
